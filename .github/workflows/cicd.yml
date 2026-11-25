@@ -49,7 +49,7 @@ jobs:
 
       # 3. Maven Build and JUnit Testing
       - name: Maven Build and Test
-        run: ./mvnw -B clean verify
+        run: bash ./mvnw -B clean verify
 
       # 4. Setup Docker Buildx
       - name: Setup Docker Buildx
