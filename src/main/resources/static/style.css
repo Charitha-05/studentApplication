@@ -1,0 +1,214 @@
+:root {
+    color-scheme: light;
+    --ink: #172554;
+    --muted: #64748b;
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --accent: #0f9f8f;
+    --surface: #ffffff;
+    --line: #e2e8f0;
+    --danger: #dc2626;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 56px 24px;
+    color: var(--ink);
+    background:
+        radial-gradient(ellipse at 10% 5%, rgba(129, 140, 248, 0.18), transparent 34rem),
+        linear-gradient(145deg, #f8fafc 0%, #eef2ff 55%, #ecfeff 100%);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.container {
+    width: min(100%, 980px);
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    letter-spacing: -0.045em;
+    text-align: center;
+}
+
+.intro {
+    margin: 10px 0 34px;
+    color: var(--muted);
+    font-size: 1rem;
+    text-align: center;
+}
+
+h2 {
+    margin: 0 0 22px;
+    color: var(--ink);
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+}
+
+.form-box,
+.table-box {
+    margin-bottom: 24px;
+    padding: 28px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 18px 45px rgba(30, 41, 59, 0.08);
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    color: #334155;
+    font-size: 0.92rem;
+    font-weight: 650;
+}
+
+input,
+select {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 8px;
+    padding: 11px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    outline: none;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.13);
+}
+
+button {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--primary), #6366f1);
+    box-shadow: 0 7px 16px rgba(79, 70, 229, 0.22);
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 650;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.28);
+}
+
+button:focus-visible,
+td a:focus-visible {
+    outline: 3px solid rgba(79, 70, 229, 0.35);
+    outline-offset: 3px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+}
+
+table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+}
+
+th {
+    background: #eef2ff;
+    color: #3730a3;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+}
+
+tbody tr {
+    transition: background-color 140ms ease;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+td {
+    color: #334155;
+    font-size: 0.94rem;
+}
+
+td a {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 7px;
+    background: #fef2f2;
+    color: var(--danger);
+    font-size: 0.86rem;
+    font-weight: 650;
+    text-decoration: none;
+    transition: background-color 140ms ease, color 140ms ease;
+}
+
+td a:hover {
+    background: var(--danger);
+    color: #fff;
+}
+
+.error {
+    margin: 6px 0 0;
+    color: var(--danger);
+    font-size: 0.84rem;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 32px 14px;
+    }
+
+    .intro {
+        margin-bottom: 24px;
+    }
+
+    .form-box,
+    .table-box {
+        padding: 21px 17px;
+        border-radius: 14px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
